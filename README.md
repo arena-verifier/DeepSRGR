@@ -4,6 +4,8 @@ This is re-implemented DeepSRGR instantiated on ERAN
 DeepSRGR was proposed in [TACAS'21](https://arxiv.org/abs/2010.07722).
 This repo is the re-implementaion of the spurious region guided refinement method proposed in DeepSRGR and is instantiated on DeepPoly domain in ETH Robustness Analyzer for Neural Networks ([ERAN](https://github.com/eth-sri/eran)). 
 
+This reimplementation allows analysis over onnx, tensorflow, pytorch network models while [original DeepSRGR](https://github.com/CAS-LRJ/RefineRobustness supports .rlv and .nnet files as network files.
+
 
 Requirements 
 ------------
@@ -14,7 +16,7 @@ python3.6 or higher (python3.6 might be preferred), tensorflow, numpy.
 
 Installation
 ------------
-Clone the ARENA repository via git as follows:
+Clone the re-implemented DeepSRGR repository via git as follows:
 ```
 git clone https://github.com/arena-verifier/DeepSRGR.git
 cd DeepSRGR

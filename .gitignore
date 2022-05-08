@@ -25,3 +25,4 @@ tf_verify/stress_test_result/
 *.o
 *.so
 ELINA/fppoly/*.o
+tf_verify/__main__.py
