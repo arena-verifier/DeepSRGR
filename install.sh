@@ -50,14 +50,14 @@ make install
 cd ..
 rm mpfr-4.1.0.tar.xz
 
-wget https://github.com/cddlib/cddlib/releases/download/0.94j/cddlib-0.94j.tar.gz
-tar -xvf cddlib-0.94j.tar.gz
-cd cddlib-0.94j
+wget https://github.com/cddlib/cddlib/releases/download/0.94m/cddlib-0.94m.tar.gz
+tar -xvf cddlib-0.94m.tar.gz
+cd cddlib-0.94m
 ./configure
 make
 make install
 cd ..
-rm cddlib-0.94j.tar.gz
+rm cddlib-0.94m.tar.gz
 
 cd ELINA
 ./configure -use-deeppoly
@@ -65,21 +65,20 @@ make
 make install
 cd ..
 
-wget https://packages.gurobi.com/9.0/gurobi9.0.0_linux64.tar.gz
-tar -xvf gurobi9.0.0_linux64.tar.gz
-cd gurobi900/linux64/src/build
+wget https://packages.gurobi.com/9.5/gurobi9.5.0_linux64.tar.gz
+tar -xvf gurobi9.5.0_linux64.tar.gz
+cd gurobi950/linux64/src/build
 sed -ie 's/^C++FLAGS =.*$/& -fPIC/' Makefile
 make
 cp libgurobi_c++.a ../../lib/
-cp ../../lib/libgurobi90.so /usr/lib
+cp ../../lib/libgurobi95.so /usr/lib
 cd ../..
-python3.6 setup.py install
+python3 setup.py install
 cd ../..
 
-export GUROBI_HOME="$(pwd)/gurobi900/linux64"
+export GUROBI_HOME="$(pwd)/gurobi950/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:${GUROBI_HOME}/lib
-
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib
 
 ldconfig
